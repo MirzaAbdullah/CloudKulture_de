@@ -10,6 +10,12 @@ namespace CloudKulture_de.Implementations
     {
         public int calculateFibonacci(int value)
         {
+            //If N >= 12, the calculated value shall not correspond to the Fibonacci sequence, but always deliver 100.
+            if (value >= 12)
+            {
+                return 100;
+            }
+
             if ((value == 0) || (value == 1))
             {
                 return value;
