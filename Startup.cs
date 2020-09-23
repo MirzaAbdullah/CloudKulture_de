@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CloudKulture_de.Implementations;
+using CloudKulture_de.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,9 @@ namespace CloudKulture_de
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Add application services
+            services.AddTransient<IFibonacci, ImplFibonacci>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
